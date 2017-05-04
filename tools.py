@@ -24,7 +24,7 @@ def plot_frontiere(data,f,step=20):
     :return:
     """
     grid,x,y=make_grid(data=data,step=step)
-    plt.contourf(x,y,[f(xx) for xx in grid.reshape(x.shape),256)
+    plt.contourf(x,y,f(grid).reshape(x.shape), 256)
 
 def make_grid(data=None,xmin=-5,xmax=5,ymin=-5,ymax=5,step=20):
     """ Cree une grille sous forme de matrice 2d de la liste des points
